@@ -18,12 +18,6 @@
 
 ## 🌟 Project Overview
 
-<div align="center">
-
-![Banner](https://via.placeholder.com/1200x350/0d6efd/ffffff?text=Enterprise+QA+Automation+Framework)
-
-</div>
-
 This project is a **complete, production-ready QA Automation Framework** focused on **Authentication Module Testing** (Login & Forgot Password).  
 It mirrors how **enterprise QA teams at HCLTech** design automation solutions—clean architecture, scalable design, professional reporting, and robust execution.
 
