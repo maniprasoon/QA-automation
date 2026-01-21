@@ -150,34 +150,36 @@ git clone <repository-url>
 cd qa_automation_project
 
 ```
-#Create Virtual Environment
+Create Virtual Environment
 ```bash
 python -m venv venv
 ```
-#Activate:
+Activate:
 ```bash
 # Windows
 venv\Scripts\activate
 
 ```
-#Install Dependencies
+Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
-#Verify Framework
+Verify Framework
 ```bash
 pytest tests/importstest.py -v
 ```
-###🧪 Test Execution
-#Demo Run
+
+##🧪 Test Execution
+
+Demo Run
 ```bash
 python run_demo.py
 ```
-##Full Suite
+Full Suite
 ```bash
 python run_tests.py
 ```
-##Advanced Options
+Advanced Options
 ```bash
 python run_tests.py --test-type login
 python run_tests.py --test-type reset
@@ -185,7 +187,8 @@ python run_tests.py --parallel
 python run_tests.py --headless
 python run_tests.py --browser firefox
 ```
-###📊 Reporting & Dashboard
+##📊 Reporting & Dashboard
+
 #Web Dashboard
 ```bash
 python dashboard.py
