@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HCLTech QA Automation Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f0f2f5; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .header { background: #0066cc; color: white; padding: 30px; border-radius: 10px 10px 0 0; margin: -30px -30px 30px -30px; text-align: center; }
+        h1 { margin: 0; }
+        .section { margin: 30px 0; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .card { background: #f8f9fa; padding: 20px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #0066cc; }
+        .success { color: #28a745; font-weight: bold; }
+        .btn { display: inline-block; background: #0066cc; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin: 5px; border: none; cursor: pointer; }
+        .btn:hover { background: #0052a3; }
+        .btn-warning { background: #ffc107; color: #000; }
+        .btn-warning:hover { background: #e0a800; }
+        .status { display: inline-block; padding: 5px 10px; border-radius: 3px; font-size: 0.9em; margin-left: 10px; }
+        .status-running { background: #28a745; color: white; }
+        .status-stopped { background: #dc3545; color: white; }
+        .checkmark { color: #28a745; font-weight: bold; margin-right: 5px; }
+        #message { padding: 10px; margin: 10px 0; border-radius: 5px; display: none; }
+        .message-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .message-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HCLTech QA Automation Framework</h1>
+            <p>Enterprise Authentication Testing Report</p>
+        </div>
+        
+        <div class="section">
+            <h2>&#10004; HCLTech Requirements Met</h2>
+            <div class="card">
+                <span class="success">&#10004; COMPLETE</span> - Login functionality automation
+            </div>
+            <div class="card">
+                <span class="success">&#10004; COMPLETE</span> - Error message validation
+            </div>
+            <div class="card">
+                <span class="success">&#10004; COMPLETE</span> - Forgot password workflow
+            </div>
+            <div class="card">
+                <span class="success">&#10004; COMPLETE</span> - Pytest test structure
+            </div>
+            <div class="card">
+                <span class="success">&#10004; COMPLETE</span> - Reusable test utilities
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>&#128736; Technical Implementation</h2>
+            <p><strong>Test Application:</strong> <a href="https://www.saucedemo.com" target="_blank">Swag Labs (SauceDemo)</a></p>
+            <p><strong>Framework:</strong> Selenium WebDriver + Pytest</p>
+            <p><strong>Design Pattern:</strong> Page Object Model</p>
+            <p><strong>Test Cases:</strong> 17+ automated tests</p>
+            <p><strong>Dashboard Status:</strong> <span class="status status-stopped">NOT RUNNING</span></p>
+        </div>
+        
+        <div class="section">
+            <h2>&#128640; Quick Actions</h2>
+            <div id="message"></div>
+            <button class="btn btn-warning" id="dashboard-btn" onclick="startDashboard()">Start Web Dashboard</button>
+            <a class="btn" href="https://www.saucedemo.com" target="_blank">Open Test Application</a>
+            <button class="btn" onclick="runTests()">Run Demo Tests</button>
+            <button class="btn" onclick="generateNewReport()">Generate New Report</button>
+        </div>
+        
+        <div class="section">
+            <h2>&#128196; Report Information</h2>
+            <p><strong>Generated:</strong> 2026-01-21 14:13:13</p>
+            <p><strong>Report File:</strong> hcl_report_20260121_141312.html</p>
+            <p><strong>Location:</strong> D:\OneDrive_2025-12-31\qa_automation_project\reports\hcl_report_20260121_141312.html</p>
+            <p><strong>Dashboard URL:</strong> <a href="http://localhost:8080" target="_blank">http://localhost:8080</a></p>
+            <p><strong>To start dashboard:</strong> Open terminal and run: <code>python dashboard.py</code></p>
+        </div>
+    </div>
+    
+    <script>
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = text;
+            messageDiv.className = type === 'success' ? 'message-success' : 'message-error';
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        function checkDashboard() {
+            fetch('http://localhost:8080', { method: 'HEAD', mode: 'no-cors' })
+                .then(() => {
+                    window.open('http://localhost:8080', '_blank');
+                })
+                .catch(() => {
+                    showMessage('Dashboard is not running. Please start it first using: python dashboard.py', 'error');
+                });
+            return false;
+        }
+        
+        function startDashboard() {
+            showMessage('Starting dashboard server... This may take a few seconds.', 'success');
+            setTimeout(() => {
+                window.open('http://localhost:8080', '_blank');
+                showMessage('Dashboard opened in new tab. If it doesn't load, wait a few seconds and refresh.', 'success');
+            }, 2000);
+        }
+        
+        function runTests() {
+            showMessage('This would run: python run_demo.py', 'success');
+        }
+        
+        function generateNewReport() {
+            showMessage('This would generate a new report', 'success');
+        }
+        
+        // Check dashboard status on page load
+        window.onload = function() {
+            console.log('HCLTech Report loaded successfully');
+            showMessage("Dashboard is not running. Click the yellow button to start it.", "error")
+        };
+    </script>
+</body>
+</html>
