@@ -54,11 +54,6 @@ It is a **full-fledged automation framework** suitable for large-scale enterpris
 | 9 | Browser synchronization | ✅ |
 | 10 | QA best practices | ✅ |
 
-<div align="center">
-
-![Completed](https://via.placeholder.com/900x150/198754/ffffff?text=%E2%9C%85+ALL+HCLTech+REQUIREMENTS+COMPLETED)
-
-</div>
 
 ---
 
@@ -125,11 +120,6 @@ qa_automation_project/
 
 ## 🚀 Quick Start (One-Click Execution)
 
-<div align="center">
-
-![QuickStart](https://via.placeholder.com/900x250/0b5ed7/ffffff?text=One-Click+Enterprise+Execution)
-
-</div>
 
 ### Windows
 ```bash
